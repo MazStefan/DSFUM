@@ -14,17 +14,13 @@ void blink() {
 void walk() {
   for(int i=8; i<=13; i++) {
     digitalWrite(i, 1);
-    for(int j=8; j<=13; j++)
-      if(i!=j)
-        digitalWrite(j,0);
+    digitalWrite(i-1,0);
     delay(100);
   }
 
   for(int i=13; i>=8; i--) {
     digitalWrite(i, 1);
-    for(int j=8; j<=13; j++)
-      if(i!=j)
-        digitalWrite(j,0);
+    digitalWrite(i+1,0);
     delay(100);
   }
 }
